@@ -1,6 +1,6 @@
-package com.syz.eduService.service;
+package com.syz.eduservice.service;
 
-import com.syz.eduService.entity.EduTeacher;
+import com.syz.eduservice.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author testjava
- * @since 2021-05-15
+ * @since 2021-05-16
  */
 public interface EduTeacherService extends IService<EduTeacher> {
 

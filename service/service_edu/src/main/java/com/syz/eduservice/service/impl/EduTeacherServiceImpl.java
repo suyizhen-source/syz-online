@@ -1,8 +1,8 @@
-package com.syz.eduService.service.impl;
+package com.syz.eduservice.service.impl;
 
-import com.syz.eduService.entity.EduTeacher;
-import com.syz.eduService.mapper.EduTeacherMapper;
-import com.syz.eduService.service.EduTeacherService;
+import com.syz.eduservice.entity.EduTeacher;
+import com.syz.eduservice.mapper.EduTeacherMapper;
+import com.syz.eduservice.service.EduTeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author testjava
- * @since 2021-05-15
+ * @since 2021-05-16
  */
 @Service
 public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeacher> implements EduTeacherService {
