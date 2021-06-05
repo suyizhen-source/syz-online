@@ -1,10 +1,10 @@
 ## es6介绍
-- ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准。  
+- ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准。
 
-- es6是一套标准，一套规范，JavaScript很好的遵循了这套规范。  
+- es6是一套标准，一套规范，JavaScript很好的遵循了这套规范。
 
 ## 基本用法
-##### let声明变量:
+#### let声明变量:
 - var 声明的变量没有局部作用域
 - let 声明的变量有局部作用域
 ```
@@ -25,8 +25,8 @@ let n = 4
 console.log(m)  // 2
 console.log(n)  // Identifier 'n' has already been declared
 ```
-##### const声明常量:
-- 声明之后不允许改变  
+#### const声明常量:
+- 声明之后不允许改变
 ```   
 const PI = "3.1415926"
 PI = 3  // TypeError: Assignment to constant variable.
@@ -36,7 +36,7 @@ PI = 3  // TypeError: Assignment to constant variable.
 ```
 const MY_AGE  // SyntaxError: Missing initializer in const declaration
 ```
-##### 解构赋值:
+#### 解构赋值:
 - 数组解构
 ```
 // 传统
@@ -57,7 +57,7 @@ console.log(name1, age1)
 let { name, age } =  user//注意：结构的变量必须是user中的属性
 console.log(name, age)
 ```
-##### 模板字符串
+#### 模板字符串
 - 多行字符串
 ```
 let string1 =  `Hey,
@@ -82,7 +82,7 @@ function f(){
 let string2 = `Game start,${f()}`
 console.log(string2);  // Game start,have fun!
 ```
-##### 声明对象简写
+#### 声明对象简写
 ```
 const name = "Amy"
 const age = 12
@@ -93,7 +93,7 @@ console.log(person1)
 const person2 = {name,age}
 console.log(person2) //{age: 12, name: "Amy"}
 ```
-##### 定义方法简写
+#### 定义方法简写
 ```
 // 传统
 const person1 = {
@@ -110,7 +110,7 @@ const person2 = {
 }
 person2.sayHi()  //"Hi"
 ```
-##### 对象拓展运算符
+#### 对象拓展运算符
 - 浅拷贝对象
 ```
 let person1 = {name: "Amy", age: 15}
@@ -124,11 +124,11 @@ let name = {name: "Amy"}
 let person2 = {...age, ...name}
 console.log(person2)  //{age: 15, name: "Amy"}
 ```
-##### 箭头函数
+#### 箭头函数
 - 参数 => 函数体
   - 当箭头函数没有参数或者有多个参数，要用 () 括起来。
   - 当箭头函数函数体有多行语句，用 {} 包裹起来，表示代码块。
-  - 当只有一行语句，并且需要返回结果时，可以省略 {} , 结果会自动返回。 
+  - 当只有一行语句，并且需要返回结果时，可以省略 {} , 结果会自动返回。
 ```
 // 传统
 var f1 = function(a){
