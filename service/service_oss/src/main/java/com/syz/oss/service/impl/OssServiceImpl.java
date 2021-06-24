@@ -36,7 +36,7 @@ public class OssServiceImpl implements OssService {
             // 文件上传至阿里云
             ossClient.putObject(bucketName, fileName, inputStream);
             //获取url地址
-            uploadUrl = "https://" + bucketName + "." + endpoint + fileName;
+            uploadUrl = "https://" + bucketName + "." + endpoint + "/"+fileName;
             //关闭文件流
             inputStream.close();
             return uploadUrl;
