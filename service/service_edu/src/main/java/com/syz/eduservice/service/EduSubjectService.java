@@ -2,7 +2,10 @@ package com.syz.eduservice.service;
 
 import com.syz.eduservice.entity.EduSubject;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.syz.eduservice.entity.vo.SubjectNestedQuery;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * <p>
@@ -15,4 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 public interface EduSubjectService extends IService<EduSubject> {
 
     void importSubjectData(MultipartFile file,EduSubjectService eduSubjectService);
+
+    List<SubjectNestedQuery> getAllSubject();
 }

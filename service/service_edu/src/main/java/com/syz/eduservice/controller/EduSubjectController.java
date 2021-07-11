@@ -2,17 +2,17 @@ package com.syz.eduservice.controller;
 
 
 import com.syz.commonutils.R;
+import com.syz.eduservice.entity.EduSubject;
+import com.syz.eduservice.entity.vo.SubjectNestedQuery;
 import com.syz.eduservice.service.EduSubjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -38,5 +38,11 @@ public class EduSubjectController {
         return R.success();
     }
 
+    @ApiOperation(value = "嵌套数据列表")
+    @GetMapping("/")
+    public R getAllSubject(){
+        List<SubjectNestedQuery> subjectNestedVoList= eduSubjectService.getAllSubject();
+        return R.success().data("items",subjectNestedVoList);
+    }
 
 }
