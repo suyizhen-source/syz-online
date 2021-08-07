@@ -63,7 +63,7 @@ public class CodeGenerator {
         strategy.setEntityLombokModel(true); // lombok 模型 @Accessors(chain = true) setter链式操作
         strategy.setRestControllerStyle(true); //restful api风格控制器
 //        strategy.setSuperEntityColumns("id");
-        strategy.setInclude("edu_subject");
+        strategy.setInclude("edu_course","edu_course_description","edu_chapter","edu_video");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀
 
