@@ -2,6 +2,9 @@ package com.syz.eduservice.service;
 
 import com.syz.eduservice.entity.EduChapter;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.syz.eduservice.entity.vo.ChapterQuery;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface EduChapterService extends IService<EduChapter> {
 
+    List<ChapterQuery> getChapterAndVideo(String courseId);
 }
