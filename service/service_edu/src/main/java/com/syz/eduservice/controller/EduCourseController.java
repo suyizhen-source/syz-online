@@ -38,7 +38,7 @@ public class EduCourseController {
     //根据ID查询课程
     @ApiOperation(value = "根据ID查询课程")
         @GetMapping("/getCourseInfo/{courseId}")
-    public R getCourseInfoFormById(@PathVariable String courseId){
+    public R getCourseInfoById(@PathVariable String courseId){
         CourseInfoVo courseInfoVo = eduCourseService.getCourseInfoFormById(courseId);
         return R.success().data("courseInfoVo",courseInfoVo);
     }

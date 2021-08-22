@@ -51,7 +51,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         //查询课程基本信息
         EduCourse eduCourse = baseMapper.selectById(courseId);
         if(eduCourse == null){
-            throw new CustomizeException(20050, "数据不存在");
+            throw new CustomizeException(20041, "数据不存在");
         }
         CourseInfoVo courseInfoVo = new CourseInfoVo();
         BeanUtils.copyProperties(eduCourse,courseInfoVo);
@@ -71,7 +71,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         BeanUtils.copyProperties(courseInfoVo,eduCourse);
         int resultCourseInfo = baseMapper.updateById(eduCourse);
         if (resultCourseInfo == 0){
-            throw new CustomizeException(20060, "课程信息保存失败");
+            throw new CustomizeException(20042, "课程信息保存失败");
         }
         //保存课程详情信息
         EduCourseDescription eduCourseDescription = new EduCourseDescription();
@@ -79,7 +79,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         eduCourseDescription.setDescription(courseInfoVo.getDescription());
         boolean resultDescription = eduCourseDescriptionService.updateById(eduCourseDescription);
         if (!resultDescription){
-            throw new CustomizeException(20070, "课程详情信息保存失败");
+            throw new CustomizeException(20043, "课程详情信息保存失败");
         }
     }
 

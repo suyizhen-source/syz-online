@@ -9,6 +9,7 @@ import com.syz.eduservice.mapper.EduChapterMapper;
 import com.syz.eduservice.service.EduChapterService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.syz.eduservice.service.EduVideoService;
+import com.syz.servicebase.exceptionhandler.CustomizeException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -59,5 +60,17 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
             chapterQuery.setChildren(videoQueryList);
         }
         return chapterQueryList;
+    }
+
+    @Override
+    public Boolean removeChapterById(String chapterId) {
+        QueryWrapper<EduVideo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("chapter_id",chapterId);
+        int count = eduVideoService.count(queryWrapper);
+        if (count >0){
+            throw new CustomizeException(20093,"该分章节下存在视频课程，请先删除视频课程");
+        }
+        int delete = baseMapper.deleteById(chapterId);
+        return delete>0;
     }
 }
